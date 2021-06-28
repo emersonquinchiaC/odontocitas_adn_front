@@ -1,0 +1,29 @@
+<form class = "formulario" [formGroup]="actualizarUsuarioform" (ngSubmit)="updateUsuario($event)">
+    <mat-card >
+      <mat-card-header >
+        <mat-card-title >Actualizar Usuario</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="row">
+          <div class="col-xs">
+            <mat-form-field>
+              <input placeholder="Identificación" formControlName="identificacion" matInput type="text">
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs">
+            <mat-form-field>
+              <input placeholder="Nombre" formControlName="nombre" matInput type="text">
+            </mat-form-field>
+           </div>
+        </div>
+      </mat-card-content>
+      <mat-card-actions>
+        <button class="guargar" [disabled]="actualizarUsuarioform.invalid" mat-raised-button type="submit">Guardar</button>
+        <button class="cancelar" mat-raised-button color="warn" routerLink='/usuarios'>Cancelar</button>
+      </mat-card-actions>
+    </mat-card>
+    
+  </form>
+

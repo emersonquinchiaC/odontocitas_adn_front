@@ -1,0 +1,67 @@
+<div class="container">
+<div class="container-titulo">
+  <h1 class="titulo">Bienvenidos al apartado de citas, en este encontraras las siguientes operaciones: crear, 
+    listar, editar y eliminar citas.</h1>
+</div>
+  <div class="container-boton">
+    <h3 class="encabezado-boton">Si deseas registrar una cita de clic en el siguiente boton</h3> 
+    <button class="boton-registrar" mat-raised-button routerLink='registrar'>Registrar</button>
+   
+  </div>  
+</div>
+  <div class="container tabla">
+    <table mat-table  [dataSource]="citas" class="mat-elevation-z8">
+
+      <!--- Note that these columns can be defined in any order.
+            The actual rendered columns are set as a property on the row definition" -->
+    
+    
+      <!-- Identificacion Column -->
+      <ng-container matColumnDef="identificacionUsuario">
+        <th mat-header-cell *matHeaderCellDef> Identificación Usuario </th>
+        <td mat-cell *matCellDef="let element"> {{element.identificacionUsuario}} </td>
+      </ng-container>
+    
+      <!-- Nombre Column -->
+      <ng-container matColumnDef="nombreUsuario">
+        <th mat-header-cell *matHeaderCellDef> Nombre Usuario</th>
+        <td mat-cell *matCellDef="let element"> {{element.nombreUsuario}} </td>
+      </ng-container> 
+      <ng-container matColumnDef="tipoCita">
+          <th mat-header-cell *matHeaderCellDef> Tipo Cita </th>
+          <td mat-cell *matCellDef="let element"> {{element.tipoCita}} </td>
+        </ng-container> 
+     
+        <ng-container matColumnDef="fechaInicio">
+          <th mat-header-cell *matHeaderCellDef> Fecha Inicio </th>
+          <td mat-cell *matCellDef="let element"> {{element.fechaInicio}} </td>
+        </ng-container> 
+        <ng-container matColumnDef="fechaFin">
+          <th mat-header-cell *matHeaderCellDef> Fecha Fin </th>
+          <td mat-cell *matCellDef="let element"> {{element.fechaFin}} </td>
+        </ng-container> 
+        <ng-container matColumnDef="precio">
+          <th mat-header-cell *matHeaderCellDef> Precio </th>
+          <td mat-cell *matCellDef="let element"> {{element.precio}} </td>
+        </ng-container> 
+     
+      <ng-container matColumnDef="editar">
+          <th mat-header-cell *matHeaderCellDef> Editar </th>
+          <td mat-cell *matCellDef="let element"> 
+              <button mat-raised-button color="primary" [routerLink]="['actualizar',element.id]">Editar</button>
+           </td>
+        </ng-container> 
+       
+        <ng-container matColumnDef="eliminar">
+          <th mat-header-cell *matHeaderCellDef> Eliminar </th>
+          <td mat-cell *matCellDef="let element"> 
+              <button mat-raised-button color="warn" (click)="deleteUsuario(element.id)">Eliminar</button>
+           </td>
+        </ng-container> 
+       
+      
+    
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  </div>

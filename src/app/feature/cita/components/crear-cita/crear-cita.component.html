@@ -1,0 +1,41 @@
+<form [formGroup]="crearCitaForm" (ngSubmit)="saveUsuario()">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title class="Titulo">Registrar Cita</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="row">
+          <div class="col-xs">
+            <mat-form-field>
+              <input placeholder="Identificación Usuario" formControlName="identificacionUsuario" matInput type="text">
+            </mat-form-field>
+          </div>
+        </div>
+        
+<div class="row">
+    <div class="col-xs">
+      <mat-form-field>
+        <mat-label>Tipo</mat-label>
+          <mat-select placeholder="Tipo" formControlName="tipoCita">
+            <mat-option value="control">CONTROL</mat-option>
+            <mat-option value="urgencias">URGENCIAS</mat-option>
+          </mat-select>
+      </mat-form-field>
+      </div>
+  </div>
+          <div class="row">
+            <div class="col-xs">
+              <mat-form-field>
+                <input placeholder="Fecha Inicio" formControlName="fechaInicio" matInput type="datetime">
+              </mat-form-field>
+            </div>
+          </div>
+      </mat-card-content>
+      <mat-card-actions>
+        <button [disabled]="crearCitaForm.invalid" mat-raised-button type="submit">Guardar</button>
+        <button class="cancelar" mat-raised-button color="warn" routerLink='/citas'>Cancelar</button>
+      </mat-card-actions>
+    </mat-card>
+    
+  </form>
+

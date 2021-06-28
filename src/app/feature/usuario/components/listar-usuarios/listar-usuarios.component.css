@@ -1,0 +1,57 @@
+.container{
+  text-align: center;
+}
+.container-boton{
+  text-align: center;
+  margin: 20px 10px 10px;
+}
+.container-titulo{
+  display: inline-block;
+  text-align: center;
+  margin: 10px 10px 10px;
+  font-weight: bold;
+}
+.encabezado-boton{
+  
+  margin: 10px 10px 10px;
+}
+.boton-registrar{
+  margin: 0px 10px 20px;
+  background-color: aquamarine;
+}
+.input-identificacion{
+  text-align: center;
+}
+  
+  table {
+    width:80%;
+    margin: auto;
+    table-layout: fixed;
+     border-collapse: collapse;
+  }
+ 
+  .mat-column-identificacion {
+   
+    text-align: center;
+    
+  }
+  .mat-column-nombre {
+   
+    text-align: center;
+    
+  }
+  .mat-column-editar {
+   
+    text-align: center;
+    
+  }
+  .mat-column-eliminar {
+   
+    text-align: center;
+    
+  }
+  td{
+    text-align: center;
+  }
+
+  
