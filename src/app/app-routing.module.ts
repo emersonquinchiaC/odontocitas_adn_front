@@ -8,8 +8,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'usuarios', loadChildren: () => import('./feature/usuario/usuario.module').then(mod => mod.UsuarioModule) },
   { path: 'citas', loadChildren: () => import('./feature/cita/cita.module').then(mod => mod.CitaModule) },
-  { path: '**',component: HomeComponent }
-  
+  { path: '**',component: HomeComponent } 
 ];
 
 @NgModule({

@@ -14,9 +14,7 @@ export class ListarUsuariosComponent implements OnInit {
   @Input() usuario:Usuario;
   usuarios : Usuario[];
   dataSource;
-  filterUsuario = '';
-
-  
+   
   
 
   
@@ -32,12 +30,8 @@ export class ListarUsuariosComponent implements OnInit {
    
     this.fetchUsuarios();
 
-    console.log(this.usuarios);
-    console.log('----------');
-    console.log(this.dataSource);
-
   }
-  applyFilter(filterValue: string) {
+  applyFilter(filterValue: String) {
     filterValue = filterValue.trim(); // Remove whitespace
     filterValue = filterValue.toLowerCase(); // MatTableDataSource defaults to lowercase matches
     this.dataSource.filter = filterValue;
@@ -47,7 +41,7 @@ export class ListarUsuariosComponent implements OnInit {
     this.usuarioservice.getAllUsuarios().subscribe(data =>{
      this.usuarios = data;
      this.dataSource = new MatTableDataSource(this.usuarios); 
-     this.dataSource.filterPredicate = function(data, filter: string): boolean {
+     this.dataSource.filterPredicate = function(data, filter: String): boolean {
       return data.identificacion.toLowerCase().includes(filter)
       };
     })      

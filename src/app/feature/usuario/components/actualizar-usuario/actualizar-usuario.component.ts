@@ -21,29 +21,23 @@ export class ActualizarUsuarioComponent implements OnInit {
     private router: Router,
     private activedRoute:ActivatedRoute,
     private toast:ToastrService
-
-    ) { 
-      
-   
+    ) {       
     this.builForm()
   }
 
   ngOnInit(): void {
     this.activedRoute.params.subscribe((params: Params)=>{
-      this.identificacion= params.identificacion;
+    this.identificacion= params.identificacion;
      this.usuarioService.getUsuarioPorIdentificacion(this.identificacion)
      .subscribe(user=>{
        this.actualizarUsuarioform.patchValue(user);
        this.usuario = user;
      });
-   });
-    
+   }); 
   
   }
   updateUsuario(even:Event){
-    even.preventDefault();
-
-  
+    even.preventDefault();  
     if(this.actualizarUsuarioform.valid){
       this.usuario.identificacion=this.actualizarUsuarioform.value.identificacion;
       this.usuario.nombre=this.actualizarUsuarioform.value.nombre;
@@ -56,9 +50,8 @@ export class ActualizarUsuarioComponent implements OnInit {
       })
     }
 
-  }
-    
-    private builForm(){      
+  }   
+    private builForm(){     
   
     this.actualizarUsuarioform= this.formBuilder.group({
       identificacion: ['',[Validators.required]],

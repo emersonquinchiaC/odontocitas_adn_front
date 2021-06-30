@@ -23,7 +23,6 @@ export class ManejadorError implements ErrorHandler {
     }
     return error;
   }
-
   private imprimirErrorConsola(mensaje): void {
     const respuesta = {
       fecha: new Date().toLocaleString(),

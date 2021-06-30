@@ -16,7 +16,7 @@ import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
-     CrearCitaComponent,
+    CrearCitaComponent,
     ActualizarCitaComponent,
     ListarCitarComponent
   ],

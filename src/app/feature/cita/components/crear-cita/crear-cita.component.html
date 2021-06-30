@@ -7,7 +7,7 @@
         <div class="row">
           <div class="col-xs">
             <mat-form-field>
-              <input placeholder="Identificación Usuario" formControlName="identificacionUsuario" matInput type="text">
+              <input id="identificacionUsuario" placeholder="Identificación Usuario" formControlName="identificacionUsuario" matInput type="text">
             </mat-form-field>
           </div>
         </div>
@@ -16,7 +16,7 @@
     <div class="col-xs">
       <mat-form-field>
         <mat-label>Tipo</mat-label>
-          <mat-select placeholder="Tipo" formControlName="tipoCita">
+          <mat-select id="tipoCita" placeholder="Tipo" formControlName="tipoCita">
             <mat-option value="control">CONTROL</mat-option>
             <mat-option value="urgencias">URGENCIAS</mat-option>
           </mat-select>
@@ -26,13 +26,13 @@
           <div class="row">
             <div class="col-xs">
               <mat-form-field>
-                <input placeholder="Fecha Inicio" formControlName="fechaInicio" matInput type="datetime">
+                <input id="fechaInicio" placeholder="Fecha Inicio" formControlName="fechaInicio" matInput type="datetime">
               </mat-form-field>
             </div>
           </div>
       </mat-card-content>
       <mat-card-actions>
-        <button [disabled]="crearCitaForm.invalid" mat-raised-button type="submit">Guardar</button>
+        <button id="linkGuardarCita" [disabled]="crearCitaForm.invalid" mat-raised-button type="submit">Guardar</button>
         <button class="cancelar" mat-raised-button color="warn" routerLink='/citas'>Cancelar</button>
       </mat-card-actions>
     </mat-card>
