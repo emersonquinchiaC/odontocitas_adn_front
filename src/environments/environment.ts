@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   endpoint: '/prospectos-vida',
-  url: 'http://localhost:8083/odontocitas'
+  url: 'http://20.84.194.34:8083/odontocitas'
 };
 
 /*
